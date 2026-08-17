@@ -9,7 +9,7 @@ for free.
 Drop these files in before you deploy:
 
 ```
-images/apology.jpg    → ![alt text](image.png)
+images/apology.jpg    → a photo for page 2
 images/memory1.jpg    → "Your smile"
 images/memory2.jpg    → "Our conversations"
 images/memory3.jpg    → "The little things"
