@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>I'm Sorry 🥺</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient floating hearts canvas, present on every page -->
+  <div class="hearts-field" id="heartsField" aria-hidden="true"></div>
+
+  <!-- Music toggle, floats above every page -->
+  <button class="music-btn" id="musicBtn" type="button" aria-label="Play our song">
+    <span class="music-icon">♪</span>
+    <span class="music-label">Play our song</span>
+  </button>
+
+  <!-- Progress dots -->
+  <nav class="progress-dots" id="progressDots" aria-hidden="true">
+    <span class="dot active" data-dot="1"></span>
+    <span class="dot" data-dot="2"></span>
+    <span class="dot" data-dot="3"></span>
+    <span class="dot" data-dot="4"></span>
+    <span class="dot" data-dot="5"></span>
+  </nav>
+
+  <main id="app">
+
+    <!-- ============ PAGE 1 — PLAYFUL APOLOGY ============ -->
+    <section class="page page--active" id="page1" data-page="1">
+      <div class="page-inner">
+        <p class="eyebrow">Sorry my dear my Love🥺</p>
+
+        <div class="glass-card apology-card" id="apologyCard">
+          <div class="card-glow"></div>
+          <p class="big-emoji">🥺</p>
+          <h1 class="card-title">I'm Sorry!</h1>
+          <p class="card-text">
+            Naan thaan thappu..&hellip;<br>
+            Can you please forgive me?
+          </p>
+
+          <div class="btn-row" id="btnRow">
+            <button class="btn btn-yes" id="yesBtnOriginal" type="button" data-action="advance">YES ❤️</button>
+            <button class="btn btn-no" id="noBtn" type="button">NO 😤</button>
+          </div>
+        </div>
+
+        <p class="chaos-message" id="chaosMessage" aria-live="polite"></p>
+      </div>
+
+      <!-- Runaway yes-buttons get appended here, positioned relative to the whole page -->
+      <div class="chaos-layer" id="chaosLayer" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ PAGE 2 — SINCERE APOLOGY ============ -->
+    <section class="page" id="page2" data-page="2">
+      <div class="page-inner">
+        <p class="eyebrow">no more jokes, I promise</p>
+
+        <div class="photo-frame">
+          <img src="apology.jpg" alt="A photo of us" onerror="this.closest('.photo-frame').classList.add('img-missing')">
+          <div class="photo-fallback">
+            <span>📷</span>
+            <p>Add <code>images/apology.jpg</code></p>
+          </div>
+        </div>
+
+        <div class="glass-card sincere-card">
+          <p class="letter-line">
+            I may not always say the right thing,<br>
+            but that never means I care about you any less.
+          </p>
+          <p class="letter-line">
+            Very sorry ma please da chelooo
+          </p>
+          <p class="letter-line">
+            Thappu thaan ma yesterday night pesala thaan but unna nenaikama illama,<br>
+            But ennala mudiyaathu.
+          </p>
+          <p class="letter-line">
+            Serious ah ma kanndippa mathipen but naan kathukuren,<br>
+            Mostly correct ah iruka try pannren.
+          </p>
+        </div>
+
+        <button class="link-btn" data-action="advance" type="button">Next Page &hellip; →</button>
+      </div>
+    </section>
+
+    <!-- ============ PAGE 3 — OUR MEMORIES ============ -->
+    <section class="page" id="page3" data-page="3">
+      <div class="page-inner">
+        <p class="eyebrow">our memories</p>
+        <h2 class="section-title">A few of my favorites</h2>
+
+        <div class="memory-grid">
+          <article class="memory-card">
+            <div class="memory-photo">
+              <img src="memory1.jpg" alt="Your smile" onerror="this.closest('.memory-photo').classList.add('img-missing')">
+              <div class="photo-fallback"><span>📷</span></div>
+              <span class="memory-number">01</span>
+            </div>
+            <h3>Your smile</h3>
+            <p>The one thing that can fix any bad day I'm having, instantly.</p>
+          </article>
+
+          <article class="memory-card">
+            <div class="memory-photo">
+              <img src="memory2.jpg" alt="Our conversations" onerror="this.closest('.memory-photo').classList.add('img-missing')">
+              <div class="photo-fallback"><span>📷</span></div>
+              <span class="memory-number">02</span>
+            </div>
+            <h3>Our conversations</h3>
+            <p>Oon kuda irundha minutes life la romba precious ma.</p>
+          </article>
+
+          <article class="memory-card">
+            <div class="memory-photo">
+              <img src="memory3.jpg" alt="The little things" onerror="this.closest('.memory-photo').classList.add('img-missing')">
+              <div class="photo-fallback"><span>📷</span></div>
+              <span class="memory-number">03</span>
+            </div>
+            <h3>The little things</h3>
+            <p>Chinna chinna things kuda naan maraka maten ma.</p>
+          </article>
+
+          <article class="memory-card">
+            <div class="memory-photo">
+              <img src="memory4.jpg" alt="Us" onerror="this.closest('.memory-photo').classList.add('img-missing')">
+              <div class="photo-fallback"><span>📷</span></div>
+              <span class="memory-number">04</span>
+            </div>
+            <h3>Us</h3>
+            <p>My favorite WORD, my favorite PLACE, my favorite PERSON.</p>
+          </article>
+        </div>
+
+        <button class="btn btn-yes" data-action="advance" type="button">Read my letter 💌</button>
+      </div>
+    </section>
+
+    <!-- ============ PAGE 4 — LOVE LETTER ============ -->
+    <section class="page" id="page4" data-page="4">
+      <div class="page-inner">
+        <div class="letter-paper">
+          <p class="letter-heading">Dear Wife,</p>
+
+          <p class="letter-body">
+            I know I made a mistake. Naan itha niyayam paduthula ma, I was wrong, and I'm sorry.
+          </p>
+          <p class="letter-body">
+            Enaku theriyum da thangoo sorry sollrathu pathathu nu. Ithu swithch potta maari marayathu naan panna hurt
+                &mdash; it's just a starting point.
+            enaku sariya therla please nambu da ma, nee mattum thaan en life...
+          </p>
+          <p class="letter-body">
+            Naan entha reasonum sollala ma because i know naan thaan problem but seekeama change pannikuren ma
+          </p>
+          <p class="letter-body">
+            Already naam thoorama irukurom pothum da intha distance, ithuve athigam thaan da like pain
+            feeling long &mdash; , naan pannra thappu nammala innum distance aakuthu...
+          </p>
+          <p class="letter-body">
+            Thangamayy, enna aanalum sari I love You❤️, soo much I don't wanna lose  <you class=""></you>
+          </p>
+
+          <p class="letter-highlight">
+            I'm sorry.<br>
+            I love you.<br>
+            And I don't want to lose you. ❤️
+          </p>
+        </div>
+
+        <button class="link-btn" data-action="advance" type="button">One last thing&hellip; ✨</button>
+      </div>
+    </section>
+
+    <!-- ============ PAGE 5 — FINAL SURPRISE ============ -->
+    <section class="page" id="page5" data-page="5">
+      <div class="page-inner">
+        <div class="finale" id="finale">
+          <h2 class="finale-title">Can we start again?</h2>
+          <p class="finale-text">
+            I don't need a perfect relationship.<br>
+            I just want <em>our</em> relationship &mdash;<br>
+            with understanding, laughter,<br>
+            forgiveness and lots of love.
+          </p>
+
+          <button class="btn btn-forgive" id="forgiveBtn" type="button">I forgive you ❤️</button>
+
+          <div class="celebration" id="celebration" hidden>
+            <p class="big-heart">❤️</p>
+            <p class="celebration-title">YAY! 🥹❤️</p>
+            <p class="celebration-text">
+              Thank you, Chellamay.<br>
+              Distance doesn't get to win today.
+            </p>
+            <p class="celebration-infinity">∞ + ❤️</p>
+            <p class="celebration-footer">My love never Ends.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <audio id="ourSong" src="audio/our-song.mp3" loop preload="none"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
